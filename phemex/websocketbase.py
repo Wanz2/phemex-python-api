@@ -20,14 +20,14 @@ class WebsocketBase:
     def __init__(self, on_mainnet=False):
         if on_mainnet:
             self.api_URL = utils.URL.highratelimit_wsapi
-            self.api_key = '4e9794b2-8644-4fd4-973f-f0a5be6c6763'
-            self.api_secret = 'e8dfd4Gtm8D7vuO9CJrBJuLpzC2v0MyFQqoXeNgGc-ZjMzdiOThjOS1lOGU0LTRmMDEtODAxYi1lMmUyMzc0ZDA1YzA'
+            self.api_key = ''
+            self.api_secret = ''
             # 创建WebSocket连接 协议的建立需要先借助HTTP协议，在服务器返回101状态码之后，就可以进行websocket全双工双向通信了
             # self.ws = ws.create_connection(self.api_URL)  # 短连接
         else:
             self.api_URL = utils.URL.testnet_wsapi
-            self.api_key = 'abeb540f-076d-4be7-886b-221b1001a573'
-            self.api_secret = 'eh_m1m0KZ3KXRIHIWCp7lhmIcsDOK4MNzdcsmLCNZwQ1MzkxYjU3NC1mM2UzLTRlOWQtYmU0Ny04Njg3MTU1ZTgyYmM'
+            self.api_key = ''
+            self.api_secret = ''
 
         ws.enableTrace(True)
         self.ws = ws.WebSocketApp(self.api_URL,
