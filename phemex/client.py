@@ -254,4 +254,4 @@ class Client(object):
 
     def request_withdrawal(self, params: dict, body: dict):
         # https://github.com/phemex/phemex-api-docs/blob/master/Public-Contract-API-en.md#request-withdraw
-        return self._send_request('post', '/exchange/wallets/v2/createWithdraw', params=params, body=body)
+        return self._send_request('post', '', params=params, body=body)
