@@ -20,8 +20,11 @@ client = Client(False)
 
 # 查询主账户划转历史
 try:
+    start = int(time.mktime(time.strptime('2021-1-1 00:00:00', '%Y-%m-%d %H:%M:%S'))) * 1000
+    end = int(time.mktime(time.strptime('2022-4-1 00:03:00', '%Y-%m-%d %H:%M:%S'))) * 1000
+    now = int(time.time() * 1000)
     r = client.query_transfer_hisotry(
-        {'currency': utils.Currency.USD, 'start': 0, 'end': int(time.time() * 1000), 'limit': 50, 'offset': 0})
+        {'currency': utils.Currency.USD, 'start': start, 'end': now, 'limit': 50, 'offset': 0})
     transfer_history = pd.DataFrame(r['data']['rows'])
     print(transfer_history)
 

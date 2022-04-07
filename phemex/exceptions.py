@@ -19,5 +19,5 @@ class PhemexAPIException(Exception):    # 自定义异常PhemexAPIException，�
         self.response = response
         self.request = getattr(response, 'request', None)  # 返回response对象的request属性的值
 
-    def __str__(self):  # pragma: no cover  重写__str__函数 返回PhemexAPIException对象的属性的值
+    def __str__(self):  # pragma: no cover  重写__str__函数 类对象被调用时会自动执行该方法
         return 'HTTP(code=%s), API(errorcode=%s): %s' % (self.status_code, self.code, self.message)

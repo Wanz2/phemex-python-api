@@ -8,8 +8,9 @@ from enum import Enum
 
 
 class URL:
-    MAIN_NET_API_URL = 'https://api.phemex.com'
-    TEST_NET_API_URL = 'https://testnet-api.phemex.com'
+    highratelimit_restapi = 'https://vapi.phemex.com'
+    mainnet_api = 'https://api.phemex.com'
+    testnet_api = 'https://testnet-api.phemex.com'
     wsapi = "wss://coinsecure.in/websocket"
     highratelimit_wsapi = 'wss://vapi.phemex.com/ws'
     testnet_wsapi = 'wss://testnet.phemex.com/ws'

@@ -11,7 +11,7 @@ from phemex.exceptions import PhemexAPIException
 import phemex.constant as constant
 
 # Create a client
-client = Client(False)
+client = Client(True)
 
 # place a new order by post, priceEp is scaled price, check our API doc for more info about scaling
 # https://github.com/phemex/phemex-api-docs/blob/master/Public-API-en.md#scalingfactors0
@@ -22,9 +22,9 @@ try:
         # "clOrdID": str(uuid.uuid4()),
         "side": constant.Trade.SIDE_BUY,
         "orderQty": 1,
-        # "priceEp": 3_5000_0000,     # 限价      price scale 10^4
+        "priceEp": 3_5000_0000,     # 限价      price scale 10^4
         # "stopPxEp": 3_6000_0000,    # 触发价    与设定价存在大小关系和订单方向限制
-        "ordType": constant.Trade.ORDER_TYPE_Market,    # 止损单
+        "ordType": constant.Trade.ORDER_TYPE_Limit,    # 订单类型
         # "triggerType": constant.Trade.TriggerType_ByMarkPrice,    # 直接用字符串
         "triggerType": constant.Trade.TriggerType.ByMarkPrice.name,  # 枚举
         "timeInForce": constant.Trade.TIF_GOOD_TILL_CANCEL})
