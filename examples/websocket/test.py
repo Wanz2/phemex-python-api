@@ -3,9 +3,7 @@
 # @Author: Harper
 # @File: test.py
 # @Software: PyCharm
-# ws参考 https://mp.weixin.qq.com/s/Kx2TrcOCotZvNjSpStAnQg
-# 进程与线程 https://www.cnblogs.com/lht-record/p/8329722.html
-# IO简介  https://www.cnblogs.com/lovezbs/p/12944370.html
+
 
 
 import threading

@@ -10,6 +10,8 @@ import hashlib
 import pprint
 
 
+api_key = ''
+api_secret = ''
 
 test_ws = "wss://testnet.phemex.com/ws"
 

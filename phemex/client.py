@@ -12,7 +12,7 @@ import logging
 class Client(object):
     def __init__(self, on_mainnet=False):
         if on_mainnet:
-            self.api_URL = constant.URL.highratelimit_restapi
+            self.api_URL = constant.URL.mainnet_api
             self.api_key = ''
             self.api_secret = ''
         else:
@@ -55,7 +55,7 @@ class Client(object):
             logging.debug(sub_dict)  # 输出响应头中的请求查询号，单轮最大请求数和剩余可用请求数
 
         if not str(response.status_code).startswith('2'):  # 如果响应体中的状态码不是以2开头
-            raise PhemexAPIException(response)    # 主动抛出异常，触发异常后执行异常处理代码，而不会执行后面的代码
+            raise PhemexAPIException(response)
         try:
             res_json = response.json()  # 接口响应都是json格式的数据 以反序列化返回response对象中的二进制流content
         except ValueError:
