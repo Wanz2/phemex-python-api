@@ -13,7 +13,7 @@ client = Client(True)
 
 # 该接口目前仅供内部使用
 try:
-    google_secret = 'B62DAMJTH2VPYSFU'
+    google_secret = ''
     totp = pyotp.TOTP(google_secret)  # Time-based One-Time Password，表示基于时间戳算法的一次性密码
     otpCode = totp.now()
     r = client.request_withdrawal({'otpCode': otpCode},
