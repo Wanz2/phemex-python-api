@@ -13,12 +13,12 @@ class Client(object):
     def __init__(self, on_mainnet=False):
         if on_mainnet:
             self.api_URL = constant.URL.highratelimit_restapi
-            self.api_key = '4e9794b2-8644-4fd4-973f-f0a5be6c6763'
-            self.api_secret = 'e8dfd4Gtm8D7vuO9CJrBJuLpzC2v0MyFQqoXeNgGc-ZjMzdiOThjOS1lOGU0LTRmMDEtODAxYi1lMmUyMzc0ZDA1YzA'
+            self.api_key = ''
+            self.api_secret = ''
         else:
             self.api_URL = constant.URL.testnet_api
-            self.api_key = "abeb540f-076d-4be7-886b-221b1001a573"
-            self.api_secret = "eh_m1m0KZ3KXRIHIWCp7lhmIcsDOK4MNzdcsmLCNZwQ1MzkxYjU3NC1mM2UzLTRlOWQtYmU0Ny04Njg3MTU1ZTgyYmM"
+            self.api_key = ""
+            self.api_secret = ""
         self.session = requests.session()
 
     def _send_request(self, method, endpoint, params=None, body=None):
@@ -254,4 +254,4 @@ class Client(object):
 
     def request_withdrawal(self, params: dict, body: dict):
         # https://github.com/phemex/phemex-api-docs/blob/master/Public-Contract-API-en.md#request-withdraw
-        return self._send_request('post', '/exchange/wallets/v2/createWithdraw', params=params, body=body)
+        return self._send_request('post', '', params=params, body=body)
